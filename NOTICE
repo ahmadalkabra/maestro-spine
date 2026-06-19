@@ -1,0 +1,22 @@
+maestro-spine
+Copyright (c) 2026 Ahmad Alkabra
+
+This project is licensed under the MIT License (see LICENSE).
+
+Upstream lineage
+----------------
+Maestro Spine adapts operating patterns from Garry Tan's MIT-licensed gstack
+(https://github.com/garrytan/gstack) and gbrain (https://github.com/garrytan/gbrain).
+Their MIT license texts are preserved in THIRD_PARTY_NOTICES.md, and the specific
+patterns adapted are documented in ACKNOWLEDGMENTS.md.
+
+Attribution note
+-----------------
+You are free to copy, adapt, and redistribute this methodology and its
+documents under the terms of the MIT License. If you build on it, an
+attribution link back to this repository is appreciated but not required.
+
+The names "maestro-spine" and "Sprint Spine" refer to this specific
+operating model and its staged pipeline. Please do not present forks or
+derivatives as the original under these names — rename your variant so
+readers can tell adaptations apart from the source.

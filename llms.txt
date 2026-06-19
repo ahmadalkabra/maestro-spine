@@ -1,0 +1,61 @@
+# maestro-spine llms.txt
+
+This is the public agent map for `maestro-spine`.
+
+Use this file to orient AI coding agents, reviewers, and documentation agents inside this repository. It maps the portable methodology layer only. It intentionally excludes private operating environments, project-specific memory, live project data, and internal review artifacts.
+
+## Start Here
+
+- [README.md](README.md): project overview, install paths, lineage, omissions, and license.
+- [AGENTS.md](AGENTS.md): tool-agnostic operating contract for production agentic work.
+- [CLAUDE.md](CLAUDE.md): Claude Code adapter for this public skeleton.
+
+## Core Method
+
+- [docs/operating-model.md](docs/operating-model.md): how the Sprint Spine loop runs end to end.
+- [docs/verification-iron-rule.md](docs/verification-iron-rule.md): verification discipline.
+- [docs/confidence-tags.md](docs/confidence-tags.md): confidence vocabulary and evidence tags.
+- [docs/anti-slop-flag-list.md](docs/anti-slop-flag-list.md): common weak-output patterns to detect and reject.
+
+## Memory And Propagation Patterns
+
+- [docs/brain-first-lookup.md](docs/brain-first-lookup.md): source-truth lookup before answering.
+- [docs/global-brain.md](docs/global-brain.md): portable pattern for curated cross-project operating memory.
+- [docs/global-decision-tag.md](docs/global-decision-tag.md): `[GLOBAL]` decision propagation convention.
+
+## Skills
+
+- [skills/](skills/): Sprint Spine and review skill skeletons.
+
+These skills are skeletons. Adapt invocation metadata and runtime conventions to your own agent system.
+
+## Lineage And License
+
+- [ACKNOWLEDGMENTS.md](ACKNOWLEDGMENTS.md): upstream lineage and adaptation notes.
+- [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md): upstream MIT notices.
+- [LICENSE](LICENSE): license.
+- [NOTICE](NOTICE): naming and attribution convention.
+
+## Public Boundary
+
+This repository contains what travels: methodology, skeletons, rules, and documentation patterns.
+
+It does not contain:
+
+- private memory contents
+- private project data
+- operator-specific runtime tooling
+- internal project reviews
+- private personas or prompts
+- credentials, cookies, tokens, or local machine state
+- live customer, job-search, social-media, or personal context
+
+Agents should not infer missing private context. If a task requires project-specific or private information, ask the operator for the appropriate private source truth or work in the private repo where that context belongs.
+
+## Agent Rules
+
+1. Start with `README.md`, then `AGENTS.md`, then `CLAUDE.md` if using Claude Code.
+2. Use docs and skills in this repo as portable patterns, not as claims about a live private operating system.
+3. Preserve attribution to Garry Tan's MIT-licensed `gstack` and `gbrain` where relevant.
+4. Do not add private local paths, private memory, credentials, internal review notes, or project-specific source data to this public map.
+5. Before public release or visibility changes, run link checks, secret scans, private-context scans, and a final full-diff review.
