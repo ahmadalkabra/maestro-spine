@@ -108,9 +108,12 @@ To install them for Claude-style skill systems:
 
 ```bash
 mkdir -p ~/.claude/skills
-rsync -av maestro-spine/skills/ ~/.claude/skills/
+rsync -av --ignore-existing maestro-spine/skills/ ~/.claude/skills/
 find ~/.claude/skills -maxdepth 2 -name SKILL.md | sort
 ```
+
+`--ignore-existing` avoids overwriting same-named local skills. If you already
+have a customized skill with the same name, diff and merge it manually.
 
 This installs the seven-stage Sprint Spine plus standalone advisory gates such
 as `office-hours`, `ceo-review`, `sprint-autoplan`, `cso`, `design-review`, and

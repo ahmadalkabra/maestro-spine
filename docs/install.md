@@ -59,9 +59,12 @@ optional.
 ```bash
 git clone https://github.com/ahmadalkabra/maestro-spine.git
 mkdir -p ~/.claude/skills
-rsync -av maestro-spine/skills/ ~/.claude/skills/
+rsync -av --ignore-existing maestro-spine/skills/ ~/.claude/skills/
 find ~/.claude/skills -maxdepth 2 -name SKILL.md | sort
 ```
+
+`--ignore-existing` avoids overwriting same-named local skills. If you already
+have customized skills with matching names, diff and merge them manually.
 
 Expected output includes the Sprint Spine skills:
 
