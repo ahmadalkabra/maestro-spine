@@ -43,16 +43,19 @@ Open both files in your repo, replace the placeholder identity lines (tone, vend
 ```bash
 git clone https://github.com/ahmadalkabra/maestro-spine.git
 mkdir -p ~/.claude/skills
-rsync -av maestro-spine/skills/ ~/.claude/skills/
+rsync -av --ignore-existing maestro-spine/skills/ ~/.claude/skills/
 ```
 
 This installs the seven-stage Sprint Spine (`sprint-think` → `sprint-reflect`) plus the standalone advisory gates that run *outside* the pipeline: `office-hours` (pressure-test a raw idea), `ceo-review` (a sharp go/no-go on something already scoped), `sprint-autoplan` (the multi-lens planning escalation), `cso` (full-codebase security audit), `design-review` (scored visual QA), and `codex-adversarial` (cross-model review).
+
+`--ignore-existing` avoids silently overwriting same-named local skills; diff and merge manually if you already have customized skill files.
 
 The skills are opt-in by design (see the invocation discipline note in each `SKILL.md` header). Default = lean main-thread judgment; invoke explicitly when a deliverable warrants the rigor. The skeletons are shaped for Claude-style skill systems — adapt the front-matter and invocation conventions for other tools.
 
 After install, run:
 
 ```bash
+cd maestro-spine
 scripts/check-install-surface.sh
 ```
 

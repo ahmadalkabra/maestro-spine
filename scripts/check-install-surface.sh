@@ -26,11 +26,30 @@ check_dir() {
   fi
 }
 
-check_file_with_rg() {
-  if ! command -v rg >/dev/null 2>&1; then
-    echo "missing required command: rg" >&2
+check_search_tool() {
+  if command -v rg >/dev/null 2>&1; then
+    echo "ok: rg"
+  elif command -v grep >/dev/null 2>&1; then
+    echo "ok: grep fallback"
+  else
+    echo "missing required command: rg or grep" >&2
     fail=1
-    return
+  fi
+}
+
+search_matches() {
+  if command -v rg >/dev/null 2>&1; then
+    rg -n "$@"
+  else
+    grep -En "$@"
+  fi
+}
+
+search_has_match() {
+  if command -v rg >/dev/null 2>&1; then
+    rg -n "$@" >/dev/null
+  else
+    grep -En "$@" >/dev/null
   fi
 }
 
@@ -39,6 +58,10 @@ check_file "README.md"
 check_file "START_HERE.md"
 check_file "AGENTS.md"
 check_file "CLAUDE.md"
+check_file "ACKNOWLEDGMENTS.md"
+check_file "THIRD_PARTY_NOTICES.md"
+check_file "LICENSE"
+check_file "NOTICE"
 check_file "docs/install.md"
 check_file "docs/operating-model.md"
 check_file "docs/global-brain.md"
@@ -76,12 +99,12 @@ done
 
 echo
 echo "== command preflight =="
-check_file_with_rg
+check_search_tool
 
-if command -v rg >/dev/null 2>&1; then
+if command -v rg >/dev/null 2>&1 || command -v grep >/dev/null 2>&1; then
   echo
   echo "== unresolved install placeholders =="
-  if rg -n "ESSAY_URL|TODO_INSTALL|PLACEHOLDER_INSTALL|<insert|\\[insert" \
+  if search_matches "ESSAY_URL|TODO_INSTALL|PLACEHOLDER_INSTALL|<insert|\\[insert" \
     README.md START_HERE.md docs/install.md CLAUDE.md skills/codex-adversarial/SKILL.md
   then
     echo "placeholder residue found" >&2
@@ -92,7 +115,7 @@ if command -v rg >/dev/null 2>&1; then
 
   echo
   echo "== tool-shape disclosure =="
-  if rg -n "Claude-style|tool-independent|adapt" README.md START_HERE.md docs/install.md >/dev/null; then
+  if search_has_match "Claude-style|tool-independent|adapt" README.md START_HERE.md docs/install.md; then
     echo "ok: Claude/tool-agnostic boundary is disclosed"
   else
     echo "missing Claude/tool-agnostic disclosure" >&2
