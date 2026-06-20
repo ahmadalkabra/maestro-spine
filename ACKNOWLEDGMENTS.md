@@ -54,7 +54,7 @@ every factual claim in an agent deliverable; the specific operational wording of
 Verification Iron Rule (project state files are stale by default; re-read the source; downgrade
 explicitly); the `[GLOBAL]` decision-tag propagation mechanism; the **Global Brain**
 cross-project memory-propagation pattern; the Chief-of-Staff role-discipline rule and its five
-work products; and the operator-specific gates.
+work products; and the operator-defined gates.
 
 These choices adapt modern, established operating disciplines: gated
 product-development workflows, OKR and forecasting confidence vocabulary, and

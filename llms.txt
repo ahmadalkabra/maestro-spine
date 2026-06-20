@@ -7,6 +7,8 @@ Use this file to orient AI coding agents, reviewers, and documentation agents in
 ## Start Here
 
 - [README.md](README.md): project overview, install paths, lineage, omissions, and license.
+- [START_HERE.md](START_HERE.md): first-run path for new adopters.
+- [docs/install.md](docs/install.md): install and adaptation guide.
 - [AGENTS.md](AGENTS.md): tool-agnostic operating contract for production agentic work.
 - [CLAUDE.md](CLAUDE.md): Claude Code adapter for this public skeleton.
 
@@ -58,4 +60,4 @@ Agents should not infer missing private context. If a task requires project-spec
 2. Use docs and skills in this repo as portable patterns, not as claims about a live private operating system.
 3. Preserve attribution to Garry Tan's MIT-licensed `gstack` and `gbrain` where relevant.
 4. Do not add private local paths, private memory, credentials, internal review notes, or project-specific source data to this public map.
-5. Before public release or visibility changes, run link checks, secret scans, private-context scans, and a final full-diff review.
+5. Before major public promotion, repo visibility changes, or release announcements, run link checks, secret scans, private-context scans, and a final full-diff review.
