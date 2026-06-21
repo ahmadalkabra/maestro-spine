@@ -79,7 +79,7 @@ I'm Ahmad Alkabra, a senior product leader and AI-native builder working across 
 
 Maestro Spine is part of my operating system for AI-native product work: a portable way to keep agentic work source-backed, reviewable, owned, and honest about what is known.
 
-**LinkedIn / X:** [@ahmadalkabra](https://www.linkedin.com/in/aalkabra) · [@ahmadalkabra](https://x.com/ahmadalkabra)
+**LinkedIn:** [Ahmad Alkabra](https://www.linkedin.com/in/aalkabra) · **X:** [@ahmadalkabra](https://x.com/ahmadalkabra)
 
 ## License
 
